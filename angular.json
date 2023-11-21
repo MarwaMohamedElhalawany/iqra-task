@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       },
       "root": "",
@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/froala-editor/css/froala_style.min.css"
+        
             ],
             "scripts": []
           },
@@ -94,11 +97,18 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "scripts": []
+                  ],
+            "scripts": [
+
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4254363e-43d9-449e-8a04-62b4ad87c44c"
   }
 }
+
+

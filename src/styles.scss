@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$fontColor:#fff;
+$bgColor: #fff;
+// $bgColor: #131722;
+
+$fontColor:#fff;
+$lightBgColor: #5fafcc;
+$bgTransparent: rgba(36, 186, 239, .6);
+$fontColor: #fff;
+$borderColor: #a8a8a83d;
+$borderHeight: 1px;
+$secondFontColor: #949cb0;
+
+body {
+    
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: $bgColor;
+    color: $fontColor;
+}
+
+a {
+    font-size: 18px;
+    color: $fontColor;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    font-size: 18px;
+    color: $fontColor;
+    text-decoration: none;
+}
+
+.vote {
+    background-color: $lightBgColor;
+    padding: 5px;
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.brdr {
+    height: 1px;
+    background-color: $borderColor;
+}
+
+.secondColor {
+    color: $secondFontColor;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.nav-link:hover {
+    color: #5fafcc;
+}
+
+.details p {
+    color: $secondFontColor;
+    font-size: 18px;
+}
+
+.details h5 {
+    padding-bottom: 7px;
+    font-size: 16px;
+    color: $lightBgColor;
+}
+
+.details span {
+    color: $secondFontColor;
+}

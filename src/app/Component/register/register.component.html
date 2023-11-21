@@ -1,0 +1,90 @@
+<br>
+<div class="register  flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 w-full lg:w-1/2 mx-auto">
+
+    <div *ngIf='error' class="bg-red-500 text-white p-4 mb-4">
+        <p>{{error}}</p>
+    </div>
+<form [formGroup]='registerForm' (ngSubmit)='register()'>
+    <div class="space-y-12">
+        <h2 class="text-base font-semibold leading-7 text-gray-900">Create Your Account</h2>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-6">
+            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First Name</label>
+            <div class="mt-2">
+                <input formControlName='first_name'  type="text" name="first-name" id="first-name" autocomplete="given-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div *ngIf=" registerForm.get('first_name')?.errors != null && registerForm.get('first_name')?.touched" class="bg-red-500 text-white p-4 mt-5">
+                <p *ngIf=" registerForm.get('first_name')?.errors?.['required']">First_name is required</p>
+                <p *ngIf=" registerForm.get('first_name')?.errors?.['minlength']">First_name is minLength 3</p>
+                <p *ngIf=" registerForm.get('first_name')?.errors?.['maxlength']">First_name is maxLength 10</p>
+            </div>
+        </div>
+        <div class="sm:col-span-6">
+            <label for="last_name" class="block text-sm font-medium leading-6 text-gray-900">Last Name</label>
+            <div class="mt-2">
+                <input formControlName='last_name' type="text" name="last_name" id="last_name" autocomplete="family-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div *ngIf="  registerForm.get('last_name')?.errors != null && registerForm.get('last_name')?.touched" class="bg-red-500 text-white p-4 mt-5">
+                <p *ngIf=" registerForm.get('last_name')?.errors?.['required']">last_name is required</p>
+                <p *ngIf=" registerForm.get('last_name')?.errors?.['minlength']">last_name is minLength 3</p>
+                <p *ngIf=" registerForm.get('last_name')?.errors?.['maxlength']">last_name is maxLength 10</p>
+            </div>
+        </div>
+        <div class="sm:col-span-6">
+            <label for="age" class="block text-sm font-medium leading-6 text-gray-900">Age</label>
+            <div class="mt-2">
+                <input formControlName='age' type="number" name="age" id="age" autocomplete="given-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div *ngIf=" registerForm.get('age')?.errors != null && registerForm.get('age')?.touched" class="bg-red-500 text-white p-4 mt-5">
+                <p *ngIf=" registerForm.get('age')?.errors?.['required']">age is required</p>
+                <p *ngIf=" registerForm.get('age')?.errors?.['min']">age is min 16</p>
+                <p *ngIf=" registerForm.get('age')?.errors?.['max']">age is max 80</p>
+            </div>
+        </div> 
+        <div class="sm:col-span-6">
+            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+            <div class="mt-2">
+                <input formControlName='email' id="email" name="email" type="email" autocomplete="email"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div *ngIf=" registerForm.get('email')?.errors != null && registerForm.get('email')?.touched" class="bg-red-500 text-white p-4 mt-5">
+                <p *ngIf=" registerForm.get('email')?.errors?.['required']">email is required</p>
+                <p *ngIf=" registerForm.get('email')?.errors?.['email']">email is invalid</p>
+            </div>
+        </div>
+        <div class="sm:col-span-6">
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+            <div class="mt-2">
+                <input formControlName='password' id="password" name="password" type="password" autocomplete="password"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div *ngIf=" registerForm.get('password')?.errors != null && registerForm.get('password')?.touched" class="bg-red-500 text-white p-4 mt-5">
+                <p *ngIf=" registerForm.get('password')?.errors?.['required']">password is required</p>
+            <p *ngIf=" registerForm.get('password')?.errors?.['minlength']">minimum length is (6)</p>
+            </div>
+        </div>
+        <div class="sm:col-span-6">
+            <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+            <div class="mt-2">
+                <select formControlName="country"  id="country" name="country" autocomplete="country-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                    <option>Egypt</option>
+                </select>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="mt-6 flex items-center justify-first gap-x-6">
+        <button type="submit" [disabled]='registerForm.invalid'
+            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Register</button>
+    </div>
+</form>
+</div>
