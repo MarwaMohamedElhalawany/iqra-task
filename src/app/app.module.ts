@@ -6,7 +6,6 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 import { LoginComponent } from './Component/login/login.component';
 import { HomeComponent } from './Component/home/home.component';
 import { PhotosComponent } from './Component/photos/photos.component';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
@@ -18,6 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {provideAuth, getAuth} from '@angular/fire/auth';
 import { PhotosService } from './Services/photos.service';
 import { RegisterComponent } from './Component/register/register.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCpZKTd9Le6tzYrWjsQhZzHe6nzroG9KYg",
@@ -37,6 +38,7 @@ const firebaseConfig = {
     PhotosComponent,
     NavbarComponent,
     RegisterComponent,
+   
   ],
   imports: [
     BrowserModule,
