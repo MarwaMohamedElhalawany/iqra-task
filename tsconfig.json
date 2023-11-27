@@ -24,10 +24,17 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*.ts",  // Include your TypeScript source files
+    "src/types/custom-interfaces.d.ts"  // Include your custom types directory
+  ],
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+
+ 
 }

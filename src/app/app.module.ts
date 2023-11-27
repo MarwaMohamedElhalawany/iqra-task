@@ -20,6 +20,7 @@ import { RegisterComponent } from './Component/register/register.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCpZKTd9Le6tzYrWjsQhZzHe6nzroG9KYg",
   authDomain: "task-1f2a3.firebaseapp.com",

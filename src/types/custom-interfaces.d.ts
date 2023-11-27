@@ -1,5 +1,8 @@
 import { Subscriber } from 'rxjs';
 import firebase from 'firebase/compat/app';
+import { DocumentChange } from 'firebase/firestore';
+// import { DocumentChange } from 'src/types/custom-interfaces';
+
 export declare type Settings = firebase.firestore.Settings;
 export declare type CollectionReference<T = DocumentData> = firebase.firestore.CollectionReference<T>;
 export declare type DocumentReference<T = DocumentData> = firebase.firestore.DocumentReference<T>;
@@ -27,7 +30,12 @@ export interface QueryDocumentSnapshot<T> extends firebase.firestore.QueryDocume
 export interface QuerySnapshot<T> extends firebase.firestore.QuerySnapshot<T> {
     readonly docs: QueryDocumentSnapshot<T>[];
 }
-export interface DocumentChange<T> extends firebase.firestore.DocumentChange<T> {
+// export interface CustomDocumentChange<T> extends DocumentChange <T> {
+
+// export interface DocumentChange<T> extends firebase.firestore.DocumentChange<T> {
+export interface CustomDocumentChang<T> extends firebase.firestore.DocumentChange<T> {
+
+
     readonly doc: QueryDocumentSnapshot<T>;
 }
 export interface DocumentChangeAction<T> {
